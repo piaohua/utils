@@ -7,7 +7,10 @@
  * *******************************************************/
 package utils
 
-import "testing"
+import (
+	"strings"
+	"testing"
+)
 
 func Test_Int2Str(t *testing.T) {
 	s := Int2Str(10)
@@ -36,4 +39,18 @@ func Test_Split(t *testing.T) {
 	s = Split(path, "assets/files/")
 	t.Log(path)
 	t.Logf("%#v", s)
+	ss := "photo.jpg"
+	t.Logf("%#v", ss[:len(ss)-4])
+	p := strings.Split("photo.jpg", ".jpg")
+	url := strings.Join(p, "http://wx.qlogo.cn/mmopen/")
+	t.Logf("%#v", p[0])
+	t.Logf("%#v", url)
+}
+
+func Test_Sub(t *testing.T) {
+	str := "http://wx.qlogo.cn/mmopen/DYAIOgq83erIjKfVSjTNeqdwWkGiazdzeoPaxVer7FxzibJEf3LHOCnbMSjRb8mRQhmFiagLNzKoRwBXCCw4Eex66J0I5A0Rk2P/0"
+	s := Split(str, "wx.qlogo.cn")
+	t.Logf("%#v", s)
+	str2 := strings.Join(s, "nn.18bn.cn")
+	t.Logf("%#v", str2)
 }

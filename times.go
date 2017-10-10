@@ -550,6 +550,15 @@ func NewTicker(second int) *time.Ticker {
 }
 
 /**
+ * 时钟
+ * @param millisecond int
+ * @return *time.Ticker
+ */
+func NewTickerMilli(millisecond int) *time.Ticker {
+	return time.NewTicker(time.Duration(millisecond) * time.Millisecond)
+}
+
+/**
  * 定时器
  * @param second int
  * @param f func()
@@ -570,8 +579,7 @@ func TimerRun(second int, f func()) *time.Timer {
  * @return bool
  */
 func TimerStop(timer *time.Timer) bool {
-	stop := timer.Stop()
-	if stop {
+	if timer.Stop() {
 		return true
 	}
 	return false

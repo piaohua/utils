@@ -474,3 +474,13 @@ func GetIPAddrByTaoBao(ip string) (res *IPTaoBao, err error) {
 	err = json.Unmarshal(bytes.TrimSpace(b), &res)
 	return
 }
+
+//
+func GetPhoto(str string) string {
+	if str == "" {
+		return str
+	}
+	//return strings.Join(Split(str, "wx.qlogo.cn/mmopen/"), "nn.18bn.cn/mmopen/?photo=")
+	//return strings.Join(Split(str, "wx.qlogo.cn/mmopen/"), "nnyl.iy00.cn/mmopen/?photo=")
+	return strings.Join(Split(str, "wx.qlogo.cn/mmopen/"), "qpnn.qd92.cn/mmopen/?photo=")
+}
