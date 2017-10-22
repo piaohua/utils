@@ -297,7 +297,7 @@ func Weekday() time.Weekday {
  * @return bool
  */
 func Before() bool {
-	then := date(2009, 11, 17, 20, 34, 58, 651387237)
+	then := Date(2009, 11, 17, 20, 34, 58, 651387237)
 	return then.Before(now())
 }
 
@@ -306,7 +306,7 @@ func Before() bool {
  * @return bool
  */
 func After() bool {
-	then := date(2009, 11, 17, 20, 34, 58, 651387237)
+	then := Date(2009, 11, 17, 20, 34, 58, 651387237)
 	return then.After(now())
 }
 
@@ -315,7 +315,7 @@ func After() bool {
  * @return bool
  */
 func Equal() bool {
-	then := date(2009, 11, 17, 20, 34, 58, 651387237)
+	then := Date(2009, 11, 17, 20, 34, 58, 651387237)
 	return then.Equal(now())
 }
 
@@ -324,7 +324,7 @@ func Equal() bool {
  * @return time.Duration
  */
 func Diff() time.Duration {
-	then := date(2009, 11, 17, 20, 34, 58, 651387237)
+	then := Date(2009, 11, 17, 20, 34, 58, 651387237)
 	return now().Sub(then)
 	// diff := now.Sub(then)
 	// diff.Hours()
@@ -476,7 +476,7 @@ func BsonNow() time.Time {
  * Date returns the current local time
  * @return time.Time struct{}
  */
-func date(year, month, day, hour, min, sec, nsec int) time.Time {
+func Date(year, month, day, hour, min, sec, nsec int) time.Time {
 	Month := time.Month(month)
 	return time.Date(year, Month, day, hour, min, sec, nsec, time.UTC)
 }
