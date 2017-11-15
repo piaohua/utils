@@ -1,10 +1,3 @@
-/**********************************************************
- * Author : Michael
- * Email : dolotech@163.com
- * Last modified : 2016-07-07 23:42
- * Filename : to_test.go
- * Description :
- * *******************************************************/
 package utils
 
 import (

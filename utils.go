@@ -1,10 +1,3 @@
-/**********************************************************
- * Author        : Michael
- * Email         : dolotech@163.com
- * Last modified : 2016-04-30 09:40
- * Filename      : utils.go
- * Description   : 常用的工具方法，如：验证是否为邮箱等
- * *******************************************************/
 package utils
 
 import (

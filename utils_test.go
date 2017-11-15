@@ -1,6 +1,3 @@
-/**
- * Created by Michael on 2015/8/4.
- */
 package utils
 
 import (
@@ -18,12 +15,11 @@ func Test_copy(t *testing.T) {
 }
 
 func TestPWD(t *testing.T) {
-	t.Log(AalidataPwd("dolo0425"))
-
+	t.Log(AalidataPwd("xxxx"))
 }
 
 func TestPhone(t *testing.T) {
-	t.Log(PhoneRegexp("8601593533372"))
+	t.Log(PhoneRegexp("8601599999999"))
 }
 
 type AA struct {
