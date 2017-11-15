@@ -1,6 +1,6 @@
-#  utils
+## utils
 
-**Install**
+### **Install**
 ```
 cd $GOPATH
 go get
@@ -45,31 +45,31 @@ go get
 
 ### example
 >参照php的date()函数和strtotime()函数
->>t := utils.StrToTime("2012-11-12 23:32:01")
+>>t := utils.StrToTime("2012-11-12 23:32:01")</br>
 
 >字符串转换为time.Time类型
->>t := utils.StrToLocalTime("2012-11-12 23:32:01")
->>t := utils.StrToLocalTime("2012-11-12")
+>>t := utils.StrToLocalTime("2012-11-12 23:32:01")</br>
+>>t := utils.StrToLocalTime("2012-11-12")</br>
 
 >原生Go实现字符串转换为time.Time类型
->>t := time.Date(2012, 11, 12, 23, 32, 01, 0, time.Local)
->>t := time.Date(2012, 11, 12, 0, 0, 0, 0, time.Local)
+>>t := time.Date(2012, 11, 12, 23, 32, 01, 0, time.Local)</br>
+>>t := time.Date(2012, 11, 12, 0, 0, 0, 0, time.Local)</br>
 
 >time.Time类型格式化为字符串
->>now := time.Now()
->>strTime := utils.Format("Y-m-d H:i:s", now)
+>>now := time.Now()</br>
+>>strTime := utils.Format("Y-m-d H:i:s", now)</br>
 
 >原生Go实现time.Time类型格式化为字符串
->>strTime := time.Now().Format("2006-01-02 15:04:05")
+>>strTime := time.Now().Format("2006-01-02 15:04:05")</br>
 
 ---
 
-**TODO**
+### **TODO**
 
-**License**
+### **License**
 * LICENSE
 
-**Reference**
+### **Reference**
 * github.com/choleraehyq/gofunctools/functools
 * github.com/polaris1119/times
 * github.com/polaris1119/goutils
