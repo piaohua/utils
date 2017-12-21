@@ -54,3 +54,10 @@ func Test_Sub(t *testing.T) {
 	str2 := strings.Join(s, "nn.18bn.cn")
 	t.Logf("%#v", str2)
 }
+
+func Test_Add(t *testing.T) {
+	s := StringAdd2("11", "890")
+	t.Logf("%s", s)
+	s = StringAdd("11")
+	t.Logf("%s", s)
+}

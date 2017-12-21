@@ -126,6 +126,64 @@ func StringAdd(numStr string) string {
 }
 
 /**
+ * 字符串加法
+ * @param numStr1 string
+ * @param numStr2 string
+ * @return string
+ */
+func StringAdd2(numStr1, numStr2 string) string {
+	len1 := len(numStr1)
+	len2 := len(numStr2)
+	//反转字符串,便于从低位到高位相加和最高位的进位导致和的位数增加
+	numStr1 = Reverse(numStr1)
+	numStr2 = Reverse(numStr2)
+	//把两个字符串补齐,即短字符串的高位用0补齐
+	if len1 < len2 {
+		numStr1 += strings.Repeat("0", len2-len1)
+	} else if len1 > len2 {
+		numStr2 += strings.Repeat("0", len1-len2)
+	}
+	runeArr1 := []rune(numStr1)
+	runeArr2 := []rune(numStr2)
+	len2 = len(numStr2)
+	runeArr3 := make([]rune, 2*len2)
+	var nCarryBit, nOverFlow rune
+	//把两个正整数相加,一位一位的加并加上进位
+	for i := 0; i < len2; i++ {
+		n := runeArr1[i] - 48 + runeArr2[i] - 48 + nCarryBit
+		if n > 9 {
+			if i == (len2 - 1) {
+				nOverFlow = 1 //有溢出
+			}
+			nCarryBit = 1 //有进位
+			runeArr3[i] = n - 10 + 48
+		} else {
+			nCarryBit = 0
+			runeArr3[i] = n + 48
+		}
+	}
+	//溢出表示进位
+	if nOverFlow == 1 {
+		runeArr3[len2] = nCarryBit + 48
+	}
+	//反转后即是相加后的值
+	return Reverse(string(runeArr3))
+}
+
+/**
+ * 反转字符串
+ * @param s string
+ * @return string
+ */
+func Reverse(s string) string {
+	runes := []rune(s)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
+}
+
+/**
  * 整形转换成字节
  * @param n int
  * @return []byte
