@@ -473,12 +473,20 @@ func BsonNow() time.Time {
 }
 
 /**
- * Date returns the current local time
+ * Date returns the current time
  * @return time.Time struct{}
  */
 func Date(year, month, day, hour, min, sec, nsec int) time.Time {
 	Month := time.Month(month)
 	return time.Date(year, Month, day, hour, min, sec, nsec, time.UTC)
+}
+
+/**
+ * DateLocal returns the current local time
+ * @return time.Time struct{}
+ */
+func DateLocal(year int, month time.Month, day, hour, min, sec, nsec int) time.Time {
+	return time.Date(year, Month, day, hour, min, sec, nsec, time.Local)
 }
 
 /**
