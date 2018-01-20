@@ -166,8 +166,29 @@ func StringAdd2(numStr1, numStr2 string) string {
 	if nOverFlow == 1 {
 		runeArr3[len2] = nCarryBit + 48
 	}
+	runeArr3 = ReverseRune(runeArr3)
+	var index int
+	for k, v := range runeArr3 {
+		if v != 0 {
+			index = k
+			break
+		}
+	}
+	runeArr3 = runeArr3[index:]
 	//反转后即是相加后的值
-	return Reverse(string(runeArr3))
+	return string(runeArr3)
+}
+
+/**
+ * 反转rune
+ * @param s string
+ * @return string
+ */
+func ReverseRune(runes []rune) []rune {
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return runes
 }
 
 /**

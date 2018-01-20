@@ -56,8 +56,8 @@ func Test_Sub(t *testing.T) {
 }
 
 func Test_Add(t *testing.T) {
-	s := StringAdd2("11", "890")
-	t.Logf("%s", s)
-	s = StringAdd("11")
-	t.Logf("%s", s)
+	s := StringAdd2("10000", "1000")
+	t.Logf("%s, %d", s, len(s))
+	s = StringAdd2(s, "11")
+	t.Logf("%s, %d", s, len(s))
 }
