@@ -486,7 +486,7 @@ func Date(year, month, day, hour, min, sec, nsec int) time.Time {
  * @return time.Time struct{}
  */
 func DateLocal(year int, month time.Month, day, hour, min, sec, nsec int) time.Time {
-	return time.Date(year, Month, day, hour, min, sec, nsec, time.Local)
+	return time.Date(year, month, day, hour, min, sec, nsec, time.Local)
 }
 
 /**
