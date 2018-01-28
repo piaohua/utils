@@ -66,6 +66,19 @@ func PhoneRegexp(phone string) bool {
 }
 
 /**
+ * 验证是否手机
+ * @param phone string
+ * @return bool
+ */
+func PhoneValidate(phone string) bool {
+	if phone == "" {
+		return false
+	}
+	reg := regexp.MustCompile(`^((1[3,4,5,7,8][0-9])|(14[5,7])|(17[0,6,7,8])|(19[7]))\d{8}$`)
+	return reg.MatchString(phone)
+}
+
+/**
  * 验证账号是否合法
  * @param account string
  * @return bool

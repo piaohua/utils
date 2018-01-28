@@ -22,6 +22,10 @@ func TestPhone(t *testing.T) {
 	t.Log(PhoneRegexp("8601599999999"))
 }
 
+func TestVal(t *testing.T) {
+	t.Log(PhoneValidate("17799892631"))
+}
+
 type AA struct {
 	CC
 	A int `json:"a"`
