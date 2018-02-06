@@ -195,6 +195,22 @@ func MonthDate() int {
 }
 
 /**
+ * 获取本地当天时间20170402
+ * @return int
+ */
+func Time2DayDate(now time.Time) int {
+	return now.Year()*10000 + int(now.Month())*100 + now.Day()
+}
+
+/**
+ * 获取本地当月时间201704
+ * @return int
+ */
+func Time2MonthDate(now time.Time) int {
+	return now.Year()*10000 + int(now.Month())*100
+}
+
+/**
  * 获取本地昨天零点时间截
  * @return int64
  */
