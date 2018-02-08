@@ -191,7 +191,7 @@ func DayDate() int {
  */
 func MonthDate() int {
 	now := now()
-	return now.Year()*10000 + int(now.Month())*100
+	return now.Year()*100 + int(now.Month())
 }
 
 /**
@@ -207,7 +207,7 @@ func Time2DayDate(now time.Time) int {
  * @return int
  */
 func Time2MonthDate(now time.Time) int {
-	return now.Year()*10000 + int(now.Month())*100
+	return now.Year()*100 + int(now.Month())
 }
 
 /**
