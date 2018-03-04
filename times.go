@@ -169,6 +169,14 @@ func Time2Stamp(t time.Time) int64 {
 }
 
 /**
+ * 返回时间截数值
+ * @return int64
+ */
+func Time2Str(t time.Time) string {
+	return Format(FORMAT, t)
+}
+
+/**
  * 返回时间
  * @return int64
  */

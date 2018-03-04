@@ -108,3 +108,8 @@ func Test_TimeStr(t *testing.T) {
 	t.Log("本地时间是 %d-%d-%d %02d:%02d:%02d %s\n",
 		year, mon, day, hour, min, sec, zone)
 }
+
+func Test_Time2Str(t *testing.T) {
+	now := time.Now()
+	t.Log(Time2Str(now))
+}
