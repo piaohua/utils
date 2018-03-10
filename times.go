@@ -631,3 +631,29 @@ func TimerStop(timer *time.Timer) bool {
 // 		return false
 // 	}
 // }
+
+/**
+ * 获取上周
+ * @return start, end time.Time
+ */
+func LastWeek() (start, end time.Time) {
+	start, end = ThisWeek()
+	start = start.AddDate(0, 0, -7)
+	end = end.AddDate(0, 0, -7)
+	return
+}
+
+/**
+ * 获取本周
+ * @return start, end time.Time
+ */
+func ThisWeek() (start, end time.Time) {
+	now := now()
+	weekday := int(now.Weekday())
+	year, month, day := now.Date()
+	start = time.Date(year, month, day, 0, 0, 0, 0, time.Local)
+	end = time.Date(year, month, day, 23, 59, 59, 0, time.Local)
+	start = start.AddDate(0, 0, (0 - weekday))
+	end = end.AddDate(0, 0, (0 - weekday + 6))
+	return
+}

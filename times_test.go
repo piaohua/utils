@@ -113,3 +113,10 @@ func Test_Time2Str(t *testing.T) {
 	now := time.Now()
 	t.Log(Time2Str(now))
 }
+
+func Test_Week(t *testing.T) {
+	start, end := ThisWeek()
+	t.Log(Time2Str(start), Time2Str(end))
+	start, end = LastWeek()
+	t.Log(Time2Str(start), Time2Str(end))
+}
