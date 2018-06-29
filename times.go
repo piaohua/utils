@@ -55,6 +55,7 @@ func Format(format string, ts ...time.Time) string {
 	return t.Format(format)
 }
 
+//StrToLocalTime  字符串转换成本地Time时间表示
 func StrToLocalTime(value string) time.Time {
 	if value == "" {
 		return time.Time{}
@@ -74,6 +75,7 @@ func StrToLocalTime(value string) time.Time {
 	return StrToTime(value)
 }
 
+//StrToTime 字符串转换成Time时间表示
 func StrToTime(value string) time.Time {
 	if value == "" {
 		return time.Time{}
@@ -169,16 +171,24 @@ func Time2Stamp(t time.Time) int64 {
 }
 
 /**
- * 返回时间截数值
- * @return int64
+ * 返回字符串格式化时间
+ * @return string
  */
 func Time2Str(t time.Time) string {
 	return Format(FORMAT, t)
 }
 
 /**
- * 返回时间
- * @return int64
+ * 返回字符串格式化本地时间
+ * @return string
+ */
+func Time2LocalStr(t time.Time) string {
+	return Format(FORMAT, t.Local())
+}
+
+/**
+ * 时间截转换为Time时间
+ * @return time.Time
  */
 func Stamp2Time(t int64) time.Time {
 	return unix(t, 0)
@@ -236,7 +246,7 @@ func TimestampTomorrow() int64 {
 
 /**
  * 获取当前年,月,日
- * @return int
+ * @return (int, time.Month, int)
  */
 func DateTime() (int, time.Month, int) {
 	year, month, day := now().Date()
@@ -245,7 +255,7 @@ func DateTime() (int, time.Month, int) {
 
 /**
  * 获取相对年,月,日
- * @return int
+ * @return int, time.Month, int)
  * Some examples: AddDateTime(0, -1, 0) 上月今天时间
  */
 func AddDateTime(year, month, day int) (int, time.Month, int) {
