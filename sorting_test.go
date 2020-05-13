@@ -6,6 +6,16 @@ import (
 	"time"
 )
 
+func TestShellSort(t *testing.T) {
+	var arr []int
+	arr = []int{9, 92, 8, 5, 21, 1, 5, 3, 2, 13}
+	ShellSort(arr)
+	t.Log("ShellSort:", arr)
+	arr = []int{9, 92, 8, 5, 21, 1, 5, 3, 2, 13}
+	ShellSort(arr)
+	t.Log("ShellSort:", arr)
+}
+
 func TestSort(t *testing.T) {
 	arr := []int{9, 92, 8, 5, 21, 1, 5, 3, 2, 12}
 	InsertionSort(arr)
@@ -32,7 +42,7 @@ func TestSort(t *testing.T) {
 	t.Log("SelectionSort:", arr)
 
 	arr = []int{9, 92, 8, 5, 21, 1, 5, 3, 2, 93}
-	MergeSort(arr)
+	arr = MergeSort(arr)
 	t.Log("MergeSort:", arr)
 
 }

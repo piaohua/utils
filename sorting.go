@@ -1,7 +1,5 @@
 package utils
 
-import "math"
-
 //直接插入排序 稳定 额外空间 1
 // 1.设置监视哨 r[i] = tmp
 // 2.从r[1]开始比较
@@ -38,19 +36,25 @@ func InsertSort(r []int) {
 }
 
 //希尔排序  不稳定
-//首先找出 num/2 进行
 func ShellSort(r []int) {
 	length := len(r)
-	d := length / 2
-	for d > 1 {
-		for i := 0; i < d; i++ {
-			for j := i; j+d < length; j++ {
-				if r[j] >= r[j+d] {
-					r[j], r[j+d] = r[j+d], r[j]
-				}
+	//区间
+	var gap int = 1
+	for gap < length {
+		gap = gap*3 + 1
+	}
+	for gap > 0 {
+		for i := gap; i < length; i++ {
+			var tmp = r[i]
+			var j = i - gap
+			//跨区间排序
+			for j >= 0 && r[j] > tmp {
+				r[j+gap] = r[j]
+				j -= gap
 			}
+			r[j+gap] = tmp
 		}
-		d = int(math.Ceil(float64(d) / 2))
+		gap = int(gap / 3)
 	}
 }
 

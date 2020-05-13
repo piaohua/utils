@@ -15,6 +15,6 @@ func TestPartial(t *testing.T) {
 	expect := 3
 	out := addTwo(1).(int)
 	if expect != out {
-		t.Fatalf("Partial() failed: expected %i got %i", expect, out)
+		t.Fatalf("Partial() failed: expected %d got %d", expect, out)
 	}
 }

@@ -53,7 +53,7 @@ func TestIntRange(t *testing.T) {
 	// Check that we get an error when min > max
 	i, err = IntRange(max, min)
 	if err != MinMaxError {
-		msg := fmt.Sprintf("Expected error when min > max, but got:", err)
+		msg := fmt.Sprintf("Expected error when min > max, but got:%v", err)
 		t.Error(msg)
 	}
 }

@@ -99,13 +99,13 @@ func Test_TimeStr(t *testing.T) {
 	year, mon, day := now.UTC().Date()
 	hour, min, sec := now.UTC().Clock()
 	zone, _ := now.UTC().Zone()
-	t.Log("UTC 时间是 %d-%d-%d %02d:%02d:%02d %s\n",
+	t.Logf("UTC 时间是 %d-%d-%d %02d:%02d:%02d %s\n",
 		year, mon, day, hour, min, sec, zone)
 
 	year, mon, day = now.Date()
 	hour, min, sec = now.Clock()
 	zone, _ = now.Zone()
-	t.Log("本地时间是 %d-%d-%d %02d:%02d:%02d %s\n",
+	t.Logf("本地时间是 %d-%d-%d %02d:%02d:%02d %s\n",
 		year, mon, day, hour, min, sec, zone)
 }
 
